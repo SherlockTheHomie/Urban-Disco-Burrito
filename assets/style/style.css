@@ -6,4 +6,10 @@
 	background-color: gold;
 	color: black;
 	border-color: black;
+	width: 50%;
+	height: auto;
+}
+
+.card-title {
+	color: black;
 }
