@@ -35,6 +35,28 @@ getBeverageApi();
 //           listItem.textContent = data[i].html_url;
 //           repoList.appendChild(listItem);
 
+
+//let responseText = document.getElementById('response-text');
+getMusicapi();
+    function getMusicapi() {
+
+    let requestUrl = 'https://binaryjazz.us/wp-json/genrenator/v1/genre/';
+
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+    //console.log(requestUrl);
+    })
+      .then(function (data) {
+        let musicGenre = data;
+        console.log(musicGenre);                                              
+    })
+      
+    }
+
+
+    //fetchButton.addEventListener('click', getMusicApi);
+
 function getFoodApi() {
 	var requestUrl = "https://foodish-api.herokuapp.com/api/";
 	fetch(requestUrl)
@@ -52,3 +74,4 @@ getFoodApi();
 
 //TODOs:
 //change source value of image to api image
+
