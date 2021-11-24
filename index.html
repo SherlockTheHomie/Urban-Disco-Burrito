@@ -19,11 +19,11 @@
     </div>
 
     <!--Generate Button-->
-    <div class="container-fluid p-4 mx-auto text-center">
-    <button type="button" class="btn btn-primary btn-lg btn-block container-fluid " id="genBtn">Click to Generate</button>
+    <div class="container-fluid p-4 mx-auto text-center" >
+    <button type="button" class="btn btn-primary btn-lg btn-block container-fluid " onclick="getBeverageApi(), getMusicapi(), getFoodApi()" id="genBtn">Click to Generate</button>
     </div>
 
-    <!--Cards and its container-->
+    <!--Cards Container-->
     <div class="container" id="card-container">
       <!--meal card-->
     <div class= "row">
@@ -31,8 +31,7 @@
       <img src="./assets/images/400placeholder.png" id="foodImg" class="card-img" alt="...">
       <div class="card-img-overlay">
         <h5 class="card-title">Meal</h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text">Last updated 3 mins ago</p> -->
+        
       </div>
     </div>
   </div>
@@ -41,7 +40,7 @@
     <div class="card text-white p-0 mb-4">
       <img src="./assets/images/400placeholder.png" id="drinkImg" class="card-img" alt="...">
       <div class="card-img-overlay">
-        <h5 class="card-title">Beverage</h5>
+        <h5 class="card-title" id="drink-name"></h5>
         <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         <p class="card-text">Last updated 3 mins ago</p> -->
       </div>
@@ -53,12 +52,11 @@
       <img src="./assets/images/400placeholder.png" id="musicImg" class="card-img" alt="...">
       <div class="card-img-overlay">
         <h5 class="card-title">Music</h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text">Last updated 3 mins ago</p> -->
+        <p class="card-text" id="music"></p>
       </div>
     </div>
     </div>
-
+<!--Cards Container-->
   </div>
 
     <!-- JavaScript Bundle with Popper -->

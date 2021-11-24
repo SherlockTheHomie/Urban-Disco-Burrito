@@ -1,66 +1,49 @@
+//Beverage API//
+//globals
 let beverageTitle = document.getElementById("drink-name");
-
+let beverageImage = document.getElementById("drinkImg");
+// Fetches random Beverage
 function getBeverageApi() {
-    
-    var requestUrl = 'https://thecocktaildb.com/api/json/v1/1/random.php/';
-  
-    fetch(requestUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (randBeverage) {
-
-        console.log(randBeverage);
-      if (!randBeverage.results.length) {
-        console.log("We can't serve you anymore");
-        
-      } else {
-
-      for (var i = 0; i < randBeverage.results.length; i++) {
-        dispBeverage(beverageId.results[i]);
-        
-      }
-    }
-});
+	var requestUrl = "https://thecocktaildb.com/api/json/v1/1/random.php/";
+	fetch(requestUrl)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (randBeverage) {
+			dispBeverage(randBeverage);
+		});
 }
-
+// Prints Beverage and image
 function dispBeverage(randomeBevvy) {
-  console.log(randomeBevvy);
-  beverageTitle.textContent = randomeBevvy.
-
-  
+	console.log(randomeBevvy);
+	beverageTitle.textContent = randomeBevvy.drinks[0].strDrink;
+	beverageImage.src = randomeBevvy.drinks[0].strDrinkThumb;
+	console.log(randomeBevvy.drinks[0].strDrinkThumb);
 }
 
-  
-getBeverageApi();
-  // fetchButton.addEventListener('click', getApi);
-  
-//   for (var i = 0; i < data.length; i++) {
-//   var listItem = document.createElement('li');
-//           listItem.textContent = data[i].html_url;
-//           repoList.appendChild(listItem);
+//Music API//
 
+function getMusicapi() {
+	let requestUrl = "https://binaryjazz.us/wp-json/genrenator/v1/genre/";
+	let musicAmbiance = document.querySelector("#music");
+	fetch(requestUrl)
+		.then(function (response) {
+			return response.json();
+			//console.log(requestUrl);
+		})
+		.then(function (data) {
+			let musicGenre = data;
+			console.log(musicGenre);
+			musicAmbiance.textContent =
+				"Create the mood with the sounds of " +
+				musicGenre;
+		});
+}
 
-//let responseText = document.getElementById('response-text');
-getMusicapi();
-    function getMusicapi() {
+//Food API//
 
-    let requestUrl = 'https://binaryjazz.us/wp-json/genrenator/v1/genre/';
-
-    fetch(requestUrl)
-      .then(function (response) {
-        return response.json();
-    //console.log(requestUrl);
-    })
-      .then(function (data) {
-        let musicGenre = data;
-        console.log(musicGenre);                                              
-    })
-      
-    }
-
-
-    //fetchButton.addEventListener('click', getMusicApi);
+//globals
+let foodImg = document.getElementById("foodImg");
 
 function getFoodApi() {
 	var requestUrl = "https://foodish-api.herokuapp.com/api/";
@@ -70,13 +53,7 @@ function getFoodApi() {
 		})
 		.then(function (data) {
 			console.log(data);
-			let foodImg = data.image;
-			console.log(foodImg);
+			foodImg.src = data.image;
+			console.log(foodImg.src);
 		});
 }
-// fetchButton.addEventListener("click", getFoodApi());
-getFoodApi();
-
-//TODOs:
-//change source value of image to api image
-
