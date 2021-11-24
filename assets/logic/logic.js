@@ -1,3 +1,4 @@
+let beverageTitle = document.getElementById("drink-name");
 
 function getBeverageApi() {
     
@@ -17,12 +18,16 @@ function getBeverageApi() {
 
       for (var i = 0; i < randBeverage.results.length; i++) {
         dispBeverage(beverageId.results[i]);
+        
       }
     }
 });
 }
 
-function dispBeverage(beverageId) {
+function dispBeverage(randomeBevvy) {
+  console.log(randomeBevvy);
+  beverageTitle.textContent = randomeBevvy.
+
   
 }
 
