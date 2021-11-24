@@ -1,3 +1,21 @@
 .card-text {
 	color: black;
 }
+
+#genBtn {
+	background-color: gold;
+	color: black;
+	border-color: black;
+	width: 50%;
+	height: auto;
+}
+
+.card-title {
+	color: black;
+}
+
+img {
+	max-width: 400px;
+	max-height: 400px;
+	margin: 0 auto;
+}
