@@ -19,18 +19,24 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
            Previous Passions
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="comboList">
+            
           </ul>
         </div>
       </nav>
     </div>
 
     <!--Generate Button-->
-    <div class="container-fluid p-4 mx-auto text-center" >
-    <button type="button" class="btn btn-primary btn-lg btn-block container-fluid " onclick="getBeverageApi(), getMusicapi(), getFoodApi()" id="genBtn">Click to Generate</button>
+    <div class="container-fluid w-25 mx-auto text-center" >
+      <button type="button" class="btn btn-primary btn-lg btn-block container-fluid " onclick="getBeverageApi(), getMusicapi(), getFoodApi()" id="genBtn">Click to Generate</button>
+      <!-- Save Button -->
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="pairingSave" class="sr-only">Save these date night pairings</label>
+          <input type="text" class="form-control" id="pairingSave" placeholder="Enter name here">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" id="saveBtn">Save this date</button>
+      </form>
     </div>
 
     <!--Cards Container-->
@@ -58,7 +64,7 @@
   </div>
     <!--music card-->
     <div class="row">
-      <div class="card  text-white p-0 mb-4">
+      <div class="card text-white p-0 mb-4">
       <img src="./assets/images/400placeholder.png" id="musicImg" class="card-img" alt="...">
       <div class="card-img-overlay">
         <h5 class="card-title">Music</h5>
