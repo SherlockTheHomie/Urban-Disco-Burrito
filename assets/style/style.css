@@ -10,6 +10,12 @@
 	height: auto;
 }
 
+#saveBtn {
+	background-color: gold;
+	color: black;
+	border-color: black;
+}
+
 .card-title {
 	color: black;
 }
