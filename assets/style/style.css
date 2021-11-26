@@ -1,3 +1,8 @@
+body {
+	background-color: black;
+	color: antiquewhite;
+}
+
 .card-text {
 	color: black;
 }
@@ -6,8 +11,8 @@
 	background-color: gold;
 	color: black;
 	border-color: black;
-	width: 50%;
-	height: auto;
+	/* width: 50%;
+	height: auto; */
 }
 
 #saveBtn {

@@ -10,7 +10,7 @@
     <title>Date Night Creator</title>
   </head>
   
-  <body>
+  <body >
     <!--navbar-->
     <div class="container-fluid">
       <nav class="navbar navbar-light bg-light">
@@ -28,11 +28,11 @@
 
     <!--Generate Button-->
     <div class="container-fluid w-25 mx-auto text-center" >
-      <button type="button" class="btn btn-primary btn-lg btn-block container-fluid " onclick="getBeverageApi(), getMusicapi(), getFoodApi()" id="genBtn">Click to Generate</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block container-fluid mt-4" onclick="getBeverageApi(), getMusicapi(), getFoodApi()" id="genBtn">Click to Generate</button>
       <!-- Save Button -->
       <form class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-          <label for="pairingSave" class="sr-only">Save these date night pairings</label>
+          <label for="pairingSave" class="sr-only">give this combination a name and click below to save</label>
           <input type="text" class="form-control" id="pairingSave" placeholder="Enter name here">
         </div>
         <button type="submit" class="btn btn-primary mb-2" id="saveBtn">Save this date</button>
@@ -44,7 +44,7 @@
       <!--meal card-->
     <div class= "row">
     <div class="card text-white p-0 mb-4">
-      <img src="./assets/images/400placeholder.png" id="foodImg" class="card-img" alt="...">
+      <img src="./assets/images/dinner-table.jpg" id="foodImg" class="card-img" alt="...">
       <div class="card-img-overlay">
         <h5 class="card-title">Meal</h5>
         
@@ -54,18 +54,17 @@
     <!--beverage card-->
     <div class="row">
     <div class="card text-white p-0 mb-4">
-      <img src="./assets/images/400placeholder.png" id="drinkImg" class="card-img" alt="...">
+      <img src="./assets/images/drinkbg.jpg" id="drinkImg" class="card-img" alt="...">
       <div class="card-img-overlay">
-        <h5 class="card-title" id="drink-name"></h5>
-        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text">Last updated 3 mins ago</p> -->
+        <h5 class="card-title" id="drink-name">Drink</h5>
+        
       </div>
     </div>
   </div>
     <!--music card-->
     <div class="row">
       <div class="card text-white p-0 mb-4">
-      <img src="./assets/images/400placeholder.png" id="musicImg" class="card-img" alt="...">
+      <img src="./assets/images/piano-player.jpg" id="musicImg" class="card-img" alt="...">
       <div class="card-img-overlay">
         <h5 class="card-title">Music</h5>
         <p class="card-text" id="music"></p>
