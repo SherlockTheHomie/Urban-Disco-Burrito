@@ -28,7 +28,7 @@
 
     <!--Generate Button-->
     <div class="container-fluid w-25 mx-auto text-center" >
-      <button type="button" class="btn btn-primary btn-lg btn-block container-fluid mt-4" onclick="getBeverageApi(), getMusicapi(), getFoodApi()" id="genBtn">Click to Generate</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block container-fluid mt-4" onclick="getBeverageApi(), getMusicapi(), getFoodApi(), imageLoop()" id="genBtn">Click to Generate</button>
       <!-- Save Button -->
       <form class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
@@ -46,7 +46,7 @@
     <div class="card text-white p-0 mb-4">
       <img src="./assets/images/dinner-table.jpg" id="foodImg" class="card-img" alt="...">
       <div class="card-img-overlay">
-        <h5 class="card-title">Meal</h5>
+        <h5 class="card-title" id="foodMsg">Meal</h5>
         
       </div>
     </div>
@@ -66,8 +66,8 @@
       <div class="card text-white p-0 mb-4">
       <img src="./assets/images/piano-player.jpg" id="musicImg" class="card-img" alt="...">
       <div class="card-img-overlay">
-        <h5 class="card-title">Music</h5>
-        <p class="card-text" id="music"></p>
+        <h5 class= "card-title" id="msg"> Music<h5>
+        <h5 class= "card-title" id ="music"> <h5>
       </div>
     </div>
     </div>
