@@ -6,6 +6,9 @@ let beverageImage = document.getElementById("drinkImg");
 let musicMessage = document.querySelector("#msg");
 let musicAmbiance = document.querySelector("#music");
 let musicImage = document.querySelector("#musicImg");
+
+
+
 // Fetches random Beverage
 function getBeverageApi() {
 	var requestUrl = "https://thecocktaildb.com/api/json/v1/1/random.php/";
@@ -78,18 +81,6 @@ function imageLoop() {
 	}
 	console.log(musicPics);
 
-	// for(let i = 0;i < 9; i++){
-	// 	let musicPic = 0;
-	// 	musicPic++;
-	// 	if(musicPic < 9){
-	// 		music = 0
-	// 	}
-	
-	
-	// for (let i = 0; i < musicImages.length; i++)
-    // musicImage.src = musicImages[i];
-	// console.log(musicImage.src);
-
 }
 
 // This is the MVP
@@ -100,7 +91,15 @@ let pastPassions = document.getElementById("dropdownMenuButton1");
 let pastList = document.getElementById("comboList");
 let saveBtn = document.getElementById("saveBtn");
 let pairingName = document.getElementById("pairingSave");
-let savedDate = document.querySelectorAll("li");
+
+
+// function pageLoad() {
+// 	if (!localStorage) {
+// 	return;
+// 	} else {
+// 		listBuilder();
+// 	}
+// }
 
 saveBtn.addEventListener("click", function(e) {
 	e.preventDefault();
@@ -124,10 +123,14 @@ saveBtn.addEventListener("click", function(e) {
   const listBuilder = () => {
 	pastList.innerHTML = "";
 	experienceStore.forEach(pairingSet => {
+	console.log(pairingSet);
 	const note = document.createElement("li");
 	note.innerHTML = pairingSet.name;
 	note.setAttribute("class", "dropdown-item");
+	note.setAttribute("id", pairingSet.name);
+	console.log(note);
 	pastList.appendChild(note);
+	note.addEventListener("click", loadDate);
 	textClear();
 	});
   };
@@ -135,11 +138,32 @@ saveBtn.addEventListener("click", function(e) {
   function textClear() {
 	pairingName.value = "";
   }
-  
- //savedDate.addEventListener("click", loadDate)
-  
-//   function loadDate(this) {
-// 	let loadedDate = this.currentTarget;
-	
 
-//   }
+let dateData;
+
+function loadDate(event) {
+	console.log("option clicked");
+	console.log(event);
+	let pairingSet = localStorage.getItem("dates");
+	pairingSet = JSON.parse(pairingSet);
+	for (let i = 0; i < pairingSet.length; i++) {
+		if (event.target.getAttribute("id") === pairingSet[i].name) {
+		console.log(pairingSet[i]);
+		let dateData = pairingSet[i]; 
+		console.log(dateData);
+		popDate(dateData); 
+		} 		
+	}	
+}
+
+function popDate(dateData) {
+	pairingName.value = dateData.name;
+	foodImg.src = dateData.food;
+	beverageTitle.innerText = dateData.drink;
+	beverageImage.src = dateData.drinkimg;
+	musicAmbiance.textContent = dateData.music;
+}
+
+
+
+  
