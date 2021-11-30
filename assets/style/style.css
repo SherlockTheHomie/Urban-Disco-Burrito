@@ -30,8 +30,18 @@ span#click {
 	color: gold;
 	font-size: 17px;
 }
+
+#dropdownMenuButton1 {
+	background-color: gold;
+	color: black;
+	border-color: crimson;
+}
+
 .card-text {
 	color: black;
+	font-family: cursive;
+	font-size: 15px;
+	font-style: italic;
 }
 
 #genBtn {
@@ -49,7 +59,11 @@ span#click {
 }
 
 .card-title {
-	color: black;
+	color: crimson;
+	font-family: cursive;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 img {
