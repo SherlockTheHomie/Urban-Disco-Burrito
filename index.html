@@ -1,89 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style/style.css">
-    <title>Date Night Creator</title>
-  </head>
-  
-  <body >
-    <!--navbar-->
-    <div class="container-fluid">
-      <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">Date Night Creator</span>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-           Previous Passions
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="comboList">
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
 
-    <!--Generate Button-->
-    <p><span id="intro">Looking for a new way to "date night"?</span><br/>
-    <span id="intro1">  Roll the dice with Date Night Creator. Unique food, drink and music combos that promise a never imagined tantalizing event at home.</span><br/>
-    <span id="warning">*Warning!</span>
-    <span id="intro2">A spontaneous and combustible date awaits. <span id="click">Click</span> the generate button to have fun and spirited night.
-  </span>
-    </p>
-    <div class="container-fluid w-25 mx-auto text-center" >
-      <button type="button" class="btn btn-primary btn-lg btn-block container-fluid mt-4" onclick="getBeverageApi(), getMusicapi(), getFoodApi(), imageLoop()" id="genBtn">Click to Generate</button>
-      <!-- Save Button -->
-      <form class="form-inline">
-        <div class="form-group mx-sm-3 mb-2">
-        <label for="pairingSave" class="sr-only">give this combination a name and click below to save</label>
-          <input type="text" class="form-control" id="pairingSave" placeholder="Enter name here">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2" id="saveBtn">Save this date</button>
-      </form>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style/style.css">
+  <title>Date Night Creator</title>
+</head>
 
-    <!--Cards Container-->
-    <div class="container" id="card-container">
-      <!--meal card-->
-    <div class= "row">
-    <div class="card text-white p-0 mb-4">
-      <img src="./assets/images/dinner-table.jpg" id="foodImg" class="card-img" alt="...">
-      <div class="card-img-overlay">
-        <h5 class="card-title" id="foodMsg">Meal</h5>
-        
+<body>
+  <!--navbar-->
+  <div class="container-fluid">
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Date Night Creator</span>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Previous Passions
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="comboList">
+
+        </ul>
       </div>
+    </nav>
+  </div>
+
+
+  <!--Generate Button-->
+  <div class="row">
+    <div class=" text-center col-6 ml-0 mr-0 mx-auto">
+      <textbox id="topText">
+        <p><br>
+        <h5>Looking for a new way to "date night"?</h5>
+        </p></br> <br>Roll the dice with Date Night Creator. Unique food, drink and
+        music
+        combos
+        that promise a never imagined tantalizing event at home.</br> <br><span id="goldText">*Warning*</span> A
+        spontaneous
+        and
+        combustible date awaits. <span id="goldText">Click</span>
+        the generate button to have a fun and spirited night.</p></br>
+      </textbox>
     </div>
   </div>
+  <div class="container-fluid w-25 mx-auto text-center">
+    <button type="button" class="btn btn-primary btn-lg btn-block container-fluid mt-4"
+      onclick="getBeverageApi(), getMusicapi(), getFoodApi(), imageLoop()" id="genBtn">Click to Generate</button>
+    <!-- Save Button -->
+    <form class="form-inline">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="pairingSave" class="sr-only">give this combination a name and click below to save</label>
+        <input type="text" class="form-control" id="pairingSave" placeholder="Enter name here">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" id="saveBtn">Save this date</button>
+    </form>
+  </div>
+
+  <!--Cards Container-->
+  <div class="container" id="card-container">
+    <!--meal card-->
+    <div class="row">
+      <div class="card text-white p-0 mb-4">
+        <img src="./assets/images/dinner-table.jpg" id="foodImg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title" id="foodMsg">Meal</h5>
+
+        </div>
+      </div>
+    </div>
     <!--beverage card-->
     <div class="row">
-    <div class="card text-white p-0 mb-4">
-      <img src="./assets/images/drinkbg.jpg" id="drinkImg" class="card-img" alt="...">
-      <div class="card-img-overlay">
-        <h5 class="card-title" id="drink-name">Drink</h5>
-        
+      <div class="card text-white p-0 mb-4">
+        <img src="./assets/images/drinkbg.jpg" id="drinkImg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title" id="drink-name">Drink</h5>
+
+        </div>
       </div>
     </div>
-  </div>
     <!--music card-->
     <div class="row">
       <div class="card text-white p-0 mb-4">
-      <img src="./assets/images/piano-player.jpg" id="musicImg" class="card-img" alt="...">
-      <div class="card-img-overlay">
-        <h5 class= "card-title" id="msg"> Music<h5>
-        <h5 class= "card-title" id ="music"> <h5>
+        <img src="./assets/images/piano-player.jpg" id="musicImg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title" id="msg"> Music<h5>
+              <h5 class="card-title" id="music">
+                <h5>
+        </div>
       </div>
     </div>
-    </div>
-<!--Cards Container-->
+    <!--Cards Container-->
   </div>
 
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!--javascript-->
-    <script src="./assets/logic/logic.js"></script>
-  </body>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!--javascript-->
+  <script src="./assets/logic/logic.js"></script>
+</body>
 
 </html>
