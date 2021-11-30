@@ -27,12 +27,18 @@
     </div>
 
     <!--Generate Button-->
+    <p><span id="intro">Looking for a new way to "date night"?</span><br/>
+    <span id="intro1">  Roll the dice with Date Night Creator. Unique food, drink and music combos that promise a never imagined tantalizing event at home.</span><br/>
+    <span id="warning">*Warning!</span>
+    <span id="intro2">A spontaneous and combustible date awaits. <span id="click">Click</span> the generate button to have fun and spirited night.
+  </span>
+    </p>
     <div class="container-fluid w-25 mx-auto text-center" >
       <button type="button" class="btn btn-primary btn-lg btn-block container-fluid mt-4" onclick="getBeverageApi(), getMusicapi(), getFoodApi(), imageLoop()" id="genBtn">Click to Generate</button>
       <!-- Save Button -->
       <form class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-          <label for="pairingSave" class="sr-only">give this combination a name and click below to save</label>
+        <label for="pairingSave" class="sr-only">give this combination a name and click below to save</label>
           <input type="text" class="form-control" id="pairingSave" placeholder="Enter name here">
         </div>
         <button type="submit" class="btn btn-primary mb-2" id="saveBtn">Save this date</button>
