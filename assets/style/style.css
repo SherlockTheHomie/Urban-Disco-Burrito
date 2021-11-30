@@ -14,6 +14,9 @@ body {
 	font-size: 15px;
 	font-style: italic;
 }
+.row-custom {
+	background-color: black;
+}
 
 #genBtn {
 	background-color: gold;

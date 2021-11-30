@@ -84,7 +84,7 @@ function imageLoop() {
 }
 
 // This is the MVP
-
+pageLoad();
 
 let experienceStore = JSON.parse(localStorage.getItem("dates"))? JSON.parse(localStorage.getItem("dates")): [];
 let pastPassions = document.getElementById("dropdownMenuButton1");
@@ -93,13 +93,13 @@ let saveBtn = document.getElementById("saveBtn");
 let pairingName = document.getElementById("pairingSave");
 
 
-// function pageLoad() {
-// 	if (!localStorage) {
-// 	return;
-// 	} else {
-// 		listBuilder();
-// 	}
-// }
+function pageLoad() {
+	if (!localStorage) {
+	return;
+	} else {
+		listBuilder();
+	}
+}
 
 saveBtn.addEventListener("click", function(e) {
 	e.preventDefault();
